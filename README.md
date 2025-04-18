@@ -4,7 +4,7 @@
 
 This mini project is a playground to see how Spring AI works.
 
-You will need to define the `spring.ai.openai.api-key` property which can be done via environment variables or the application.properties file (i think).
+You will need to define the `spring.ai.openai.api-key` property which can be done via an environment variable
 
 ```shell
 SPRING_AI_OPENAI_API_KEY=
