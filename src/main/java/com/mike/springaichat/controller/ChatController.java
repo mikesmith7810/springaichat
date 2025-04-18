@@ -20,7 +20,7 @@ public class ChatController {
     }
 
     @GetMapping("/joke")
-    public ChatResponse joke() {
-        return new ChatResponse(jokeService.getJoke());
+    public ChatResponse joke(@RequestParam(value = "prompt") String prompt) {
+        return new ChatResponse(jokeService.getJoke(prompt));
     }
 }

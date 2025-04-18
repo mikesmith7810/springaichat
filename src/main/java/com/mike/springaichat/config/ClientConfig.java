@@ -15,6 +15,11 @@ public class ClientConfig {
 
     @Bean
     public ChatClient openAiChatClient() {
-        return chatBuilder.build();
+        return chatBuilder
+                .defaultSystem(
+                        """
+						Everything you reply has to be in the form of a joke.
+						""")
+                .build();
     }
 }

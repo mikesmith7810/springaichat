@@ -12,7 +12,7 @@ public class JokeService {
         this.chatClient = chatClient;
     }
 
-    public String getJoke() {
-        return chatClient.prompt("Give me a pirate joke").call().content();
+    public String getJoke(String prompt) {
+        return chatClient.prompt(prompt).call().content();
     }
 }
