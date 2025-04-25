@@ -1,25 +1,16 @@
 package com.mike.springaichat.config;
 
-import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ClientConfig {
 
-    private final ChatClient.Builder chatBuilder;
+    @Value("${spring.ai.openai.api-key}")
+    private String apiKey;
 
-    public ClientConfig(ChatClient.Builder chatClientBuilder) {
-        this.chatBuilder = chatClientBuilder;
-    }
-
-    @Bean
-    public ChatClient openAiChatClient() {
-        return chatBuilder
-                .defaultSystem(
-                        """
-						Everything you reply has to be in the form of a joke.
-						""")
-                .build();
-    }
+    //    @Bean
+    //    public ChatClient openAiChatClient() {
+    //        return new OpenAiChatClient(apiKey);
+    //    }
 }
